@@ -11,6 +11,7 @@ export async function generatePdf(recipientData, config) {
 	);
 	const html = await renderTemplate(templatePath, {
 		...recipientData,
+		...config,
 		headerImg: imgDataUri
 	});
 	const outFile = buildFilePath(recipientData, config);

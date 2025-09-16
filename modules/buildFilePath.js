@@ -1,7 +1,7 @@
 import path from "node:path";
 
 export default function buildFilePath(recipientData, config) {
-	const safeRecipient = recipientData.recipient
+	const safeRecipient = recipientData.businessName
 		.replace(/[\\/:*?"<>|]/g, "-")
 		.replace(/\s+/g, "-");
 
