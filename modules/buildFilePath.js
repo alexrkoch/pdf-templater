@@ -5,7 +5,7 @@ export default function buildFilePath(recipientData, config) {
 		.replace(/[\\/:*?"<>|]/g, "-")
 		.replace(/\s+/g, "-");
 
-	const fileName = `${config.year}_${safeRecipient}_zoe-gift-cards.pdf`;
+	const fileName = `${config.year}_${safeRecipient}_AGM.pdf`;
 
 	return path.join("./output", fileName);
 }

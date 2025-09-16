@@ -5,50 +5,50 @@
 	<meta charset="utf-8">
 	<style>
 		body {
-			font-family: Arial, sans-serif;
-			margin: 2cm;
+			font-family: Georgia, serif;
+			margin: 1.2cm;
 		}
 
-		h1 {
-			text-align: center;
+		.header {
+			display: flex;
+			justify-content: space-between;
 		}
 
-		table {
-			width: 100%;
-			border-collapse: collapse;
-			margin-top: 1em;
+		.from {
+			font-family: Calibri, sans-serif;
 		}
 
-		th,
-		td {
-			border: 1px solid #ddd;
-			padding: 0.5em;
-			text-align: left;
-		}
-
-		.empty {
-			color: #888;
-			font-style: italic;
+		.flex-column {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
 		}
 	</style>
 </head>
 
 <body>
-	<h1>Donation Receipt</h1>
-	<p>Dear <strong>
-			<%= recipient %>
-		</strong>,</p>
-	<% if (message && message.trim()) { %>
-		<p>
-			<%= message %>
-		</p>
-		<% } else { %>
-			<p class="empty">No custom message provided.</p>
-			<% } %>
-				<p>Thank you for your support!</p>
-				<hr>
-				<p>Generated on <%= new Date().toLocaleDateString() %>
-				</p>
+	<div class="header" style="margin-bottom: 16px;">
+		<img width="220px" src="<%= headerImg %>">
+		<div class="flex-column from" style="margin-top: 12px;">
+			<i>Art & Gift Market and Silent Auction</i>
+			<i>Funding the many missions of </i>
+			<i><b>A</b>pex <b>U</b>nited <b>M</b>ethodist <b>C</b>hurch</i>
+			<i>100 South Hughes Street, Apex NC 27502</i>
+		</div>
+	</div>
+	<div>
+
+	</div>
+	<div>
+		<p>Dear <%= recipient %>,</p>
+		<p>As you know, Apex United Methodist Church is home to a host of
+			mission projects from A to Z: our youth Apex
+			Outreach Service Project to our support of global missions through
+			ZOE team who empower orphans in Africa &
+			India - as well as our support of local food banks, Red Cross,
+			Western Wake Crisis Ministry, Feed the Kids, after
+			school tutoring and more!</p>
+	</div>
 </body>
 
 </html>

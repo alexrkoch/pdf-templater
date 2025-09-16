@@ -13,7 +13,6 @@ export default async function htmlToPdf(html, outputPath) {
 		path: outputPath,
 		format: "A4",
 		printBackground: true,
-		margin: { top: "1cm", right: "1cm", bottom: "1cm", left: "1cm" }
 	});
 
 	await browser.close();
