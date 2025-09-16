@@ -1,12 +1,6 @@
-// parseCsv.js
 import { createReadStream } from "node:fs";
 import { parse } from "csv";
 
-/**
- * Parses a CSV file and resolves with an array of row objects.
- * @param {string} inputFilePath – path to the CSV file
- * @returns {Promise<Array<Object>>}
- */
 export default function parseCsv(inputFilePath) {
 	return new Promise((resolve, reject) => {
 		const readable = createReadStream(inputFilePath);
