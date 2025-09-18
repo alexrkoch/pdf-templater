@@ -6,10 +6,9 @@ const recipients = await parseCsv("./inputs/recipients.csv");
 
 console.log("Generating PDFs...");
 
-const promises = recipients.map((recipient) =>
-	generatePdf(recipient, config[0])
-);
+for (let i = 0; i < recipients.length; i++) {
+	await generatePdf(recipients[i], config[0]);
+	console.log(`PDF for ${recipients[i].businessName} complete.`);
+}
 
-await Promise.all(promises);
-
-console.log("Complete!");
+console.log("All complete!");
